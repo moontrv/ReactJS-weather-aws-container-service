@@ -1,0 +1,30 @@
+---
+
+- hosts: test
+  tasks:
+   - name : make new dir
+     file: path=/home/ubuntu/projects state=directory
+   - name : pull repo
+     git:
+      repo: https://gitlab.com/MyLanPhuong/React_WeatherApp.git
+      dest: /home/ubuntu/projects
+      version: master
+   - name: install docker
+     command: sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+   - name: apt update
+     apt: update_cache=yes
+   - name: Install python pip
+     raw: apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y python-minimal python-pip  
+   - name: Install docker-compose
+     pip:
+      name: docker-compose
+   #- name: change directory
+     #command: chdir=/home/ubuntu/projects sudo docker-compose up
+   - name: change directory
+     command: sudo docker-compose up
+     args:
+      chdir: /home/ubuntu/projects  
+      creates: /home/ubuntu/projects/conditionT 
+     #docker_service:
+      #project_src: /home/ubuntu/projects
+      #command: "docker-compose up"

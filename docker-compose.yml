@@ -1,0 +1,25 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    command: nodemon --watch /code -e js,jsx,html
+    container_name: weatherapp_frontend
+    ports:
+      - '8080:8080'
+    #volumes:
+      #- /Applications/MAMP/htdocs/weatherapp/frontend:/code
+    environment:
+      NODE_ENV: development
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: nodemon --watch /code -e js,jsx,html
+    container_name: weatherapp_backend
+    ports:
+      - '9000:9000'
+    environment:
+      NODE_ENV: development

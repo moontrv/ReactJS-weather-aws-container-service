@@ -1,0 +1,51 @@
+{
+  "name": "weatherapp-frontend",
+  "version": "0.0.1",
+  "description": "Weatherapp exercise frontend",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrako/weatherapp.git"
+  },
+  "author": "Marko Klemetti <marko.klemetti@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test": "mocha",
+    "start": "node_modules/.bin/webpack-dev-server --config webpack.config.js --progress --inline --colors",
+    "lint:jsx": "eslint src/**/*.jsx"
+  },
+  "dependencies": {
+    "chart.js": "^2.7.2",
+    "docker-nodemon": "^1.11.0",
+    "google-map-react": "^1.0.6",
+    "lodash": "^4.17.10",
+    "react": "^15.4.2",
+    "react-async": "^3.2.0",
+    "react-async-await": "^1.5.0",
+    "react-chartjs-2": "^2.7.4",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.7",
+    "react-sparklines": "^1.7.0",
+    "syncfusion-javascript": "^16.2.46"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "chai": "^4.1.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.11.1",
+    "html-webpack-plugin": "^2.28.0",
+    "mocha": "^5.2.0",
+    "request": "^2.88.0",
+    "should": "^13.2.3",
+    "supertest": "^3.1.0",
+    "transfer-webpack-plugin": "^0.1.4",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
